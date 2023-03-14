@@ -19,3 +19,6 @@
 [submodule "bibliography"]
 	path = bibliography
 	url = https://github.com/pibook/bibliography.git
+[submodule "Kallipos-Notes-LetMeDoItForYou"]
+	path = Kallipos-Notes-LetMeDoItForYou
+	url = https://github.com/LetMeDoItForYou/Kallipos-Notes-LetMeDoItForYou.git
