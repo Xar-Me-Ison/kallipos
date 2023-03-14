@@ -20,7 +20,7 @@ done
 echo "Merging tex files... "
 pandoc -s latex/*.tex -o book.tex
 
-echo " Converting to pdf... "
+echo "Converting to pdf... "
 
 pandoc -N --quiet --variable "geometry=margin=1.2in" --variable mainfont="Open Sans" --variable sansfont="Open Sans" --variable monofont="Open Sans" --variable fontsize=12pt --variable version=2.0 book.tex  --pdf-engine=xelatex --toc -o book.pdf
-echo " Finished converting to pdf. "
+echo "Finished converting to pdf. "
