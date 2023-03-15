@@ -1,5 +1,5 @@
 #!/bin/bash
-FONT="Noto Serif"
+FONT="Open Sans"
 
 if [ ! -d latex ]; then
   echo "Directory does not exist. Creating latex..."
