@@ -1,6 +1,6 @@
-function Image(img)
-  if img.classes:find('filter',1) then
-    local f = io.open("Kallipos-Notes-LetMeDoItForYou/" .. img.src, 'r')
+function Image(filter)
+  if filter.classes:find('filter',1) then
+    local f = io.open("Kallipos-Notes-LetMeDoItForYou/" .. filter.src, 'r')
     local doc = pandoc.read(f:read('*a'))
     f:close()
     local caption = pandoc.utils.stringify(doc.meta.caption)
