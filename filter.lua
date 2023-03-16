@@ -6,9 +6,7 @@ function Image(images)
     local caption = pandoc.utils.stringify(doc.meta.caption)
     local student = pandoc.utils.stringify(doc.meta.student)
     local am = pandoc.utils.stringify(doc.meta.AM)
-    local text = caption .. "\n"
-    text = text .. " Ονοματεπώνυμο: " .. student .. " "
-    text = text .. " " .. am .. "\n\n"
+    local content = " > ".. caption .." \n>".. " Ονοματεπώνυμο: ".. student .." \n>".." ΑΜ: ".. am ..
     return pandoc.RawInline('markdown',text)
   end
 end
