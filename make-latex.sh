@@ -34,6 +34,18 @@ echo "Merging tex files... "
 pandoc -s latex/*.tex -o book/book.tex
 
 echo "Converting to pdf... "
-
 pandoc -N --quiet --variable "geometry=margin=1.2in" --variable mainfont="$FONT" --variable sansfont="$FONT" --variable monofont="$FONT" --variable fontsize=12pt --variable version=2.0 book/book.tex  --pdf-engine=xelatex --toc -o book/book.pdf
 echo "Finished converting to pdf. "
+
+echo "Converting to epub..."
+pandoc -o book/book.epub book/book.tex --metadata title="book"
+
+echo "Converting to html..."
+echo "#lang pollen" >> book/book.html.pmd
+pandoc book/book.tex -o book/book.html
+cat book/book.html >> book/book.html.pmd
+raco pollen render book/book.html.pmd
+rm -rf "book/compiled"
+rm "book/book.html.pmd"
+
+echo "Book finished building."
