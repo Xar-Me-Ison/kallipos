@@ -41,10 +41,10 @@ echo "Converting to epub..."
 pandoc -o book/book.epub book/book.html --metadata title="book"
 
 echo "Converting to html..."
-echo "#lang pollen" >> book/book.html.pmd
-cat book/book.html >> book/book.html.pmd
-raco pollen render book/book.html.pmd
-rm -rf "book/compiled"
-rm "book/book.html.pmd"
+echo "#lang pollen" >> html/book.html.pmd
+cat book/book.html >> html/book.html.pmd
+raco pollen render html/index.html.pmd
+rm -rf "html/compiled"
+rm "html/book.html.pmd"
 
 echo "Book finished building."
