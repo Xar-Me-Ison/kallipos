@@ -31,7 +31,7 @@ for filename in text/apx*.txt; do
 done
 
 echo "Merging html files... "
-pandoc --quiet -s html/*.html -o index.html --metadata title="Ο Προγραμματισμός της Διάδρασης"
+pandoc --quiet -s html/*.html -o html/index.html --metadata title="Ο Προγραμματισμός της Διάδρασης"
 
 echo "Converting to pdf... "
 pandoc -N --quiet --variable "geometry=margin=1.2in" --variable mainfont="$FONT" --variable sansfont="$FONT" --variable monofont="$FONT" --variable fontsize=12pt --variable version=2.0 book/book.tex  --pdf-engine=xelatex --toc -o book/book.pdf
@@ -42,7 +42,6 @@ pandoc -o book/book.epub book/book.html --metadata title="book"
 
 echo "Converting to html..."
 echo "#lang pollen" >> book/book.html.pmd
-pandoc book/book.tex -o book/book.html
 cat book/book.html >> book/book.html.pmd
 raco pollen render book/book.html.pmd
 rm -rf "book/compiled"
