@@ -8,10 +8,6 @@ else
   echo "HTML directory already exists."
 fi
 
-echo "Remaking the book directory..."
-rm -rf ./book
-mkdir book
-
 echo "Assembling and preprocessing all the sources files..."
 
 pandoc text/pre.txt --lua-filter=epigraph.lua --to markdown | pandoc --top-level-division=chapter --to html > html/pre.html
